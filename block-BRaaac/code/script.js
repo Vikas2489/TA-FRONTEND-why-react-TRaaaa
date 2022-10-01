@@ -21,6 +21,9 @@ function createElement(type, attr = {}, ...children) {
     for (let key in attr) {
         if (key.startsWith("data-")) {
             element.setAttribute(key, attr[key]);
+        } else if (key.startsWith('on')) {
+            let eventType = key.replace('on', '').toLocaleLowerCase();
+            element.addEventListener(eventType, attr[key]);
         } else {
             element[key] = attr[key];
         }
@@ -36,6 +39,11 @@ function createElement(type, attr = {}, ...children) {
     return element;
 }
 
+function handleChange(e) {
+    let id = e.target.id;
+    allmovies[id].watched = allmovies[id].watched ? false : true;
+    createUI(rootUl);
+}
 
 
 function createUI(rootElm) {
@@ -43,8 +51,7 @@ function createUI(rootElm) {
     allmovies.forEach((movie, index) => {
         let li = createElement('li', { className: 'flex' },
             createElement('h2', {}, movie.name),
-            createElement('button', { type: 'button', "data-id": index }, 'To Watch'));
-
+            createElement('button', { type: 'button', id: index, onClick: handleChange }, movie.watched ? 'Watched' : 'To Watch'));
         rootElm.append(li);
     });
 };
