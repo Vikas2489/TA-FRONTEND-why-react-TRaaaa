@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Card</title>
+</head>
+
+<body>
+    <script src="https://kit.fontawesome.com/d8cf2a24c6.js" crossorigin="anonymous"></script>
+    <script type="text/babel">
+        let rootElement = document.querySelector('body'); let imageURL = 'https://images.unsplash.com/photo-1610874933184-7728fd666162?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'; let cardInfo
+        = { title: 'City Lights in New York', date: new Date('2017-01-26'), comments: 67, subTitle: 'The city that never sleeps.', description: "New York, the largest city in the U.S., is an architectural,marvel with plenty of historic monuments, magnificent"
+        + "buildings and countless dazzling skyscrapers.", category: 'photos' }; function createUI(data, rootElm) { let header = (
+        <header className="text-center py-5">
+            <h1 className="text-3xl font-bold my-3">All Articles</h1>
+            <p className="underline text-xl  my-2">Collection on best articles startups</p>
+        </header>
+        ); let container_of_card = (
+        <main className="container w-full">
+            <div className="card mx-10 w-1/3">
+                <div className="relative">
+                    <img src={imageURL} alt="desert" />
+                    <span className="photo_tag text-lg font-bold text-white px-5 py-3">{data.category}</span>
+                    <p className="absolute right-3 top-3 circle font-bold  inline-block orange_bg text-white">
+                        {data.date.toDateString().split(" ")[2] + " " + data.date.toDateString().split(" ")[1]}
+                    </p>
+                </div>
+                <div className="px-4 py-6">
+                    <h2 className="text-3xl font-bold ">{data.title}</h2>
+                    <span className="text-orange-600 text-2xl inline-block my-2.5">{data.subTitle}</span>
+                    <p className="grey-text leading-7">{data.description}</p>
+                    <div className="flex justify-start my-4">
+                        <p className="grey-text"> <i className="fa-solid fa-clock"></i> 6 min ago</p>
+                        <p className="grey-text ml-4"> <i className="fa-solid fa-comment"></i> {data.comments} Comments</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        ); return ReactDOM.render([header, container_of_card], rootElm); } createUI(cardInfo, rootElement);
+    </script>
+</body>
+
+</html>
