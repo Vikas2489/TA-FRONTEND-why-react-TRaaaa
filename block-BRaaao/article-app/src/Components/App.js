@@ -1,14 +1,14 @@
 import Header from './Header';
 import Hero from './Hero';
 import Footer from './Footer';
-import Article, { Articles } from './Article';
+import Articles from './Articles';
 
-function App(props) {
+function App() {
   return (
     <>
       <Header />
       <Hero />
-      <Articles {...props} />
+      <Articles />
       <Footer />
     </>
   );
