@@ -1,17 +1,13 @@
-// import ColorName from './Color_Name';
-// import Shade from './Shade';
-import AllShades from './AllShades';
+import Color from './Color';
+import Colors from './Colors';
 
-function App(props) {
+function App() {
   return (
     <>
-      {/* <div className="w-full my-6 px-10 h-auto flex justify-between">
-        <ColorName />
-        <div className="basis-3/4 container_each_colors_shade">
-          <Shade />
-        </div>
-      </div> */}
-      <AllShades />
+      <h1 className="text-center py-10 text-5xl text-sky-500/100 underline">
+        Color Palet
+      </h1>
+      <Colors />
     </>
   );
 }
