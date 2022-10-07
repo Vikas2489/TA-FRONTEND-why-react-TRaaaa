@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Button Design System</title>
+</head>
+
+<body>
+    <div id="root" class="inline-flex flex-col"></div>
+    <script type="text/babel">
+        let rootElement = document.getElementById('root'); function App() { return (
+        <>
+            <button className="text-white block px-8 py-2 my-2" type="primary" style={{background: "#132287"}} size="small" onClick={()=> alert('You Clicked Me!')}>Button</button>
+            <button className="text-white block px-8 py-2 my-2" style={{background: "#132287"}}>Button</button>
+            <button className="text-white block px-8 py-2 my-2" size="small" label="Button" type="tertiary" style={{background: "#132287"}}>Button</button>
+            <button className="text-white block px-8 py-2 my-2" size="small" label="Button" type="secondary" style={{background: "#132287"}}>Button</button>
+            <button className="border-solid border-2 block px-8 py-2 my-2 border-neutral-500" size="large" label="Button" disable="true">Button</button>
+            <button className=" block px-8 py-2 my-2 border-neutral-500" style={{border: "1px solid #132287"}} size="large" label="Button">Button</button>
+            <button className=" block px-8 py-2 my-2 " style={{fontcolor: " #132287"}} size="small" label="Button">Button</button>
+            <button className=" block px-8 py-2 my-2 " size="large" label="Button">Button</button>
+            </> ); } ReactDOM.createRoot(rootElement).render(
+
+            <App/>);
+    </script>
+</body>
+
+</html>
